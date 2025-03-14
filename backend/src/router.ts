@@ -61,5 +61,24 @@ router.post('/video', middleware, async(req,res)=>{
     })
 })
 
+router.post('/upvote',async (req,res)=>{
+    const {upvote, videoId} = req.body;
+
+    await prismaClient.video.update({
+        where:{
+            id: videoId
+        }, data:{
+            upvote:{
+                increment: 1
+            }
+        }
+    })
+
+    res.json({
+        videoId,
+        upvote
+    })
+
+})
 
 export default router;

@@ -41,10 +41,13 @@ router.post('/signin',async (req,res)=>{
             token
         })
     }
-    res.json({
-        messgae:"Unable to signin"
+    else{
+
+        res.json({
+            messgae:"Unable to signin"
+        })
+    }
     })
-})
 
 router.post('/video', middleware, async(req,res)=>{
     const { url } = req.body;

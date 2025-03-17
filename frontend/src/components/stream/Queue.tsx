@@ -53,7 +53,7 @@ export default function Queue() {
          </DialogHeader>
        </DialogContent>
      </Dialog>
-    </div>
+    </div>  
       </div>
   );
 }

@@ -47,11 +47,10 @@ router.post('/signin',async (req,res)=>{
             messgae:"Unable to signin"
         })
     }
-    })
+})
 
 router.post('/video', middleware, async(req,res)=>{
     const { url } = req.body;
-    console.log(url)
     await prismaClient.video.create({
         data:{
             url,
@@ -61,6 +60,14 @@ router.post('/video', middleware, async(req,res)=>{
 
     res.json({
         message:"Video added"
+    })
+})
+
+router.get('/videos', async(req,res)=>{
+    const videos = await prismaClient.video.findMany()
+
+    res.json({
+        videos
     })
 })
 

@@ -12,34 +12,9 @@ import { Input } from "../ui/input";
 import axios from "axios";
 import { BACKEND_URL } from "@/lib/config";
 
-interface Video {
-  id: number;
-  url: string;
-  upvote: number;
-  userId: string;
-}
 
-interface VideoResponse {
-  videos: Video[];
-}
-
-export default function Queue() {
-  const [videos, setVideos] = useState<Video[]>([]);
+export default function Queue({videos, setVideos}:{videos:any, setVideos:any}) {
   const urlRef = useRef<HTMLInputElement | null>(null);
-
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const res = await axios.get<VideoResponse>(`${BACKEND_URL}/videos`);
-        setVideos(res.data.videos || []);
-      } catch (error) {
-        console.error("Error fetching videos:", error);
-        setVideos([]); /
-      }
-    };
-
-    fetchVideos();
-  }, []);
 
   function getYouTubeVideoId(url: string) {
     const match = url.match(/[?&]v=([^&]+)/);

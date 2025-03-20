@@ -1,20 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "../ui/input";
-import axios from "axios";
-import { BACKEND_URL } from "@/lib/config";
-
 
 export default function Queue({videos, setVideos}:{videos:any, setVideos:any}) {
-  const urlRef = useRef<HTMLInputElement | null>(null);
 
   function getYouTubeVideoId(url: string) {
     const match = url.match(/[?&]v=([^&]+)/);
@@ -28,27 +15,6 @@ export default function Queue({videos, setVideos}:{videos:any, setVideos:any}) {
       : "/fallback-thumbnail.jpg"; 
   }
 
-  async function addHandler(event: React.FormEvent) {
-    event.preventDefault();
-    const videoUrl = urlRef.current?.value;
-    if (!videoUrl) return;
-
-    try {
-      const res = await axios.post(
-        `${BACKEND_URL}/video`,
-        { url: videoUrl },
-        { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
-      );
-
-      console.log(res);
-
-      setVideos((prev) => [...prev, res.data.video]); 
-      if (urlRef.current) urlRef.current.value = "";
-
-    } catch (error) {
-      console.error("Error adding video:", error);
-    }
-  }
 
   return (
     <div className="w-72">
@@ -66,21 +32,7 @@ export default function Queue({videos, setVideos}:{videos:any, setVideos:any}) {
           <p>No videos in the queue</p> 
         )}
 
-        <Dialog>
-          <DialogTrigger className="bg-white text-black font-semibold rounded-md px-3 py-2 w-full">
-            Add video
-          </DialogTrigger>
-          <DialogContent className="w-96">
-            <DialogHeader>
-              <DialogTitle>Add your favorites in Queue</DialogTitle>
-              <DialogDescription>This action cannot be undone.</DialogDescription>
-              <form onSubmit={addHandler}>
-                <Input ref={urlRef} placeholder="Enter YouTube video URL" />
-                <Button type="submit">Add</Button>
-              </form>
-            </DialogHeader>
-          </DialogContent>
-        </Dialog>
+  
       </div>
     </div>
   );

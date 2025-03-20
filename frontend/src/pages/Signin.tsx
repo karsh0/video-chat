@@ -45,10 +45,10 @@ function Signin() {
     
     return (
     <div className="flex flex-col items-center justify-center min-h-svh bg-black">
-    <Card className="w-[350px]">
+    <Card className="w-72 bg-black border rounded-2xl text-white">
       <CardHeader>
-        <CardTitle className="text-xl font-bold">Video Chat</CardTitle>
-        <CardDescription>Watch youtube videos together and have fun.</CardDescription>
+        <CardTitle className="text-xl font-bold">Welcome back</CardTitle>
+        <CardDescription className="text-gray-300">Please enter your details to signin</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
@@ -60,8 +60,7 @@ function Signin() {
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="password">Password</Label>
               <Input id="password" placeholder="Enter password" ref={passwordRef}/>
-            </div>
-            
+            </div>            
           </div>
         </form>
       </CardContent>

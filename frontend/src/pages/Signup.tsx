@@ -32,27 +32,26 @@ function Signup() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-svh bg-black">
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle className="text-xl font-bold">Video Chat</CardTitle>
-        <CardDescription>Watch youtube videos together and have fun.</CardDescription>
+        <Card className="w-96 flex flex-col items-center bg-black border border-gray-600 rounded-2xl text-white">
+    <CardHeader className="text-center">
+    <CardTitle className="text-3xl font-bold">Welcome</CardTitle>
+    <CardDescription className="text-gray-300 text-sm">Please enter your details to signin</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="w-full">
         <form>
           <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col space-y-1.5 gap-2">
               <Label htmlFor="name">Username</Label>
               <Input id="name" placeholder="Enter your username" ref={nameRef}/>
             </div>
-            <div className="flex flex-col space-y-1.5">
+            <div className="flex flex-col space-y-1.5 gap-2">
               <Label htmlFor="password">Password</Label>
               <Input id="password" placeholder="Enter password" ref={passwordRef}/>
-            </div>
-            
+            </div>            
           </div>
         </form>
       </CardContent>
-      <CardFooter className="flex flex-col gap-4">
+      <CardFooter className="flex flex-col gap-4 w-full">
         <Button className="w-full" onClick={handler}>Signup</Button>
         <Label>Already an user? <span className="text-blue-600"><Link to={'/signin'}>signin</Link></span></Label>
          

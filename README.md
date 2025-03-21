@@ -30,6 +30,12 @@ A real-time video chat and messaging platform with interactive features like vid
    ```bash
    npm run dev
    ```
+## Preview
+
+### Landing Page
+![Landing Page](./frontend/public/p1.png)   
+### Video Chat Page
+![Video Chat App](./frontend/public/p2.png)   
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.

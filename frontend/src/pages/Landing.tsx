@@ -26,7 +26,7 @@ export default function Landing() {
                     <FeatCard 
                         title="End-to-End Encryption" 
                         desc="Ensures that all messages remain private and secure, allowing only the intended recipients to read them." 
-                        Icon={Lock} 
+                        Icon={Lock}
                     />
                     <FeatCard 
                         title="Anonymous Messaging" 

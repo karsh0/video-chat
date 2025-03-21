@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 export default function Navbar(){
     return <nav className="fixed w-full z-50 backdrop-blur-lg border-b border-gray-800 text-white">
        <div className="flex h-[72px] w-full items-center justify-between lg:px-20 px-3 shadow-sm">
-       <div className="text-xl font-semibold">
+       <div className="text-xl font-semibold flex gap-1 items-center">
+            <img className="max-w-10" src="/logo.webp" alt="" />
             TubeTalk
         </div>
         <div className="flex gap-4 items-center">

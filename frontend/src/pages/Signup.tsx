@@ -35,7 +35,7 @@ function Signup() {
         <Card className="w-96 flex flex-col items-center bg-black border border-gray-600 rounded-2xl text-white">
     <CardHeader className="text-center">
     <CardTitle className="text-3xl font-bold">Welcome</CardTitle>
-    <CardDescription className="text-gray-300 text-sm">Please enter your details to signin</CardDescription>
+    <CardDescription className="text-gray-500 text-sm">Please enter your details to signin</CardDescription>
       </CardHeader>
       <CardContent className="w-full">
         <form>

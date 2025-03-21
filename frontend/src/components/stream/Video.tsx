@@ -37,8 +37,6 @@ export default function Video({videos, setVideos}:{videos:any, setVideos:any}){
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       );
 
-      console.log(res);
-
       setVideos((prev) => [...prev, res.data.video]); 
       if (urlRef.current) urlRef.current.value = "";
 

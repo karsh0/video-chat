@@ -26,7 +26,8 @@ export default function Chatbox({socket, messages}:{socket: WebSocket, messages:
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-end gap-3 p-5 bg-black text-white">
+    <div className="w-full relative h-full flex flex-col justify-end gap-3 p-5">
+      <div className="text-2xl font-semibold absolute top-2">Chat</div>
       {
         messages.map((m, index) => {
             return <div key={index}>{m.message}</div>

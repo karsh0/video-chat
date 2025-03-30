@@ -52,12 +52,12 @@ export default function Video({videos, setVideos}:{videos:any, setVideos:any}){
     }
 
     return <div className="p-5">
-        <iframe width="700" height="500"
+        <iframe width="700" height="500" className="rounded-xl"
         src={`https://www.youtube.com/embed/${videoId}` || ""}>
         </iframe>
       <div className="flex gap-4 mt-2 justify-end">
         <Dialog>
-          <DialogTrigger className="bg-white text-black font-semibold rounded-md px-3 py-1">
+          <DialogTrigger className="bg-red-500 text-white font-semibold rounded-md px-3 py-1">
             Add video
           </DialogTrigger>
           <DialogContent className="w-96">

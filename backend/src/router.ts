@@ -49,6 +49,21 @@ router.post('/signin',async (req,res)=>{
     }
 })
 
+router.get('/user', middleware, async (req, res) => {
+    try {
+        const user = await prismaClient.user.findFirst({
+            where: {
+                username: req.username, // Ensure username comes from middleware
+            },
+        });
+
+        res.json({ user });
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+
 router.post('/video', middleware, async(req,res)=>{
     const { url } = req.body;
     await prismaClient.video.create({

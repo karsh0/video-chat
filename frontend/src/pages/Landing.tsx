@@ -8,11 +8,11 @@ export default function Landing() {
         <div className="max-w-screen  m-h-screen bg-black text-white">
             <Navbar />
             <div className="container min-w-full pt-28 py-20 flex flex-col gap-5 justify-center items-center">
-                <div className="py-16 flex flex-col gap-5 justify-center items-center">
-                    <span className="text-5xl font-bold">
+                <div className="py-10 md:py-16 flex flex-col gap-5 justify-center items-center">
+                    <span className="text-3xl md:text-5xl font-bold">
                         <span className="text-red-600">Watch</span> Chat Connect
                     </span>
-                    <p className="text-xl text-gray-400 text-center">
+                    <p className="text-sm md:text-xl text-gray-400 text-center">
                         A secure and private messaging platform where conversations happen in the dark.<br/> 
                         Share your thoughts without sharing your identity.
                     </p>
@@ -22,7 +22,7 @@ export default function Landing() {
                     </div>
                 </div>
 
-                <div className="w-full grid grid-cols-4 gap-2">
+                <div className="w-80 md:w-full grid md:grid-cols-4 gap-2">
                     <FeatCard 
                         title="End-to-End Encryption" 
                         desc="Ensures that all messages remain private and secure, allowing only the intended recipients to read them." 

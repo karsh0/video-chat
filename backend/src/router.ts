@@ -35,7 +35,7 @@ router.post('/signin',async (req,res)=>{
     const passwordMatch = await bcrypt.compare(password, user?.password as string)
 
     if(user && passwordMatch){
-        const token = jwt.sign({id: user.id}, process.env.JWT_SECRET ?? "")
+        const token = jwt.sign({username: user.username}, process.env.JWT_SECRET ?? "")
         res.json({
             message:"user signup success",
             token
@@ -54,7 +54,7 @@ router.post('/video', middleware, async(req,res)=>{
     await prismaClient.video.create({
         data:{
             url,
-            userId: req.userId
+            username: req.username
         }
     })
 

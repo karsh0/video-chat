@@ -13,8 +13,8 @@ export default function middleware(req: Request, res: Response, next: NextFuncti
     try {
         const verified = jwt.verify(token, process.env.JWT_SECRET ?? "") as JwtPayload;
         
-        if (verified.id) {
-            req.userId = verified.id; 
+        if (verified.username) {
+            req.username = verified.username; 
             next();
             return;
         }

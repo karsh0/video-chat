@@ -25,7 +25,13 @@ export default function Queue({videos, setVideos}:{videos:any, setVideos:any}) {
           videos.map((x) => (
             <div key={x.id} className="w-full h-20 overflow-hidden border border-gray-600 rounded-md p-1 flex text-white gap-4 items-center">
               <img src={getYouTubeThumbnail(x.url) ?? ""} alt="Thumbnail" className="w-30 h-full" />
-              <p>Added by {x.userId}</p>
+              <div>
+              <p>Added by {x.username}</p>
+              <p className="text-sm text-gray-600">
+  {new Date(x.timestamp).toLocaleDateString("en-GB")}
+</p>
+
+              </div>
             </div>
           ))
         ) : (

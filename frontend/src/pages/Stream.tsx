@@ -38,13 +38,13 @@ export default function Stream() {
     console.log(videos)
     
     return (
-      <div className="w-screen min-h-screen h-screen pt-24 bg-black text-white flex flex-col">
+      <div className="w-screen min-h-screen pt-24 bg-black text-white flex flex-col">
         <div className="flex w-full flex-1 justify-between">
-          <div className="w-[75%] flex justify-around">
+          <div className="w-[75%] md:flex justify-around">
             <Queue videos={videos} setVideos={setVideos} />
             <Video videos={videos} setVideos={setVideos} />
           </div>
-          <div className="w-[20%] h-full fixed bottom-0 right-0 border-l border-gray-800">
+          <div className="w-[20%] hidden md:block h-full fixed bottom-0 right-0 border-l border-gray-800">
             <Chatbox socket={socket} messages={messages} />
           </div>
         </div>

@@ -32,7 +32,7 @@ function Signup() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-svh bg-black">
-        <Card className="w-96 flex flex-col items-center bg-black border border-gray-600 rounded-2xl text-white">
+        <Card className="w-80 md:w-96 flex flex-col items-center bg-black border border-gray-600 rounded-2xl text-white">
     <CardHeader className="text-center">
     <CardTitle className="text-3xl font-bold">Welcome</CardTitle>
     <CardDescription className="text-gray-500 text-sm">Please enter your details to signin</CardDescription>
